@@ -31,7 +31,7 @@ weather_info = do.call(rbind.data.frame,weather_info)
 names(weather_info)= headers
 
 ##----Convert Data Frame Columns----
-weather_info <- data.frame(lapply(weather_info, as.character), stringsAsFactors=FALSE)
+weather_info = data.frame(lapply(weather_info, as.character), stringsAsFactors=FALSE)
 numeric_cols = c(2,3,4,5,6,8,9,10,13)
 weather_info[numeric_cols] = lapply(weather_info[numeric_cols],as.numeric)
 weather_info[is.na(weather_info)]=0
